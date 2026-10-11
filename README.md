@@ -16,7 +16,7 @@ su `utun0`.
 4. Apri NineGuard, importa il QR del profilo WireGuard e tocca Connetti.
 
 Dettagli, requisiti, uso e risoluzione dei problemi:
-**[GUIDA.md](GUIDA.md)**.
+**[GUIDA.md](GUIDA.md)** (italiano / English).
 
 ## Struttura
 
@@ -43,8 +43,8 @@ DaemonPrototype/tests/host/run-host-tests.sh
 
 ## Documentazione
 
-- `GUIDA.md`: come funziona, requisiti, compilazione, installazione, uso,
-  disinstallazione, problemi comuni.
+- `GUIDA.md` (italiano / English): come funziona, requisiti, compilazione,
+  installazione, uso, disinstallazione, problemi comuni.
 - `NINEGUARD-2-CONTINUATION.md`: stato, gate verificati, sessioni.
 - `DaemonPrototype/FULL-TUNNEL-DNS-DESIGN.md`: full tunnel, DNS, watchdog
   cambio rete, MTU.
