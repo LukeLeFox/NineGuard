@@ -107,7 +107,15 @@ launchd lo riavvia: le chiavi DNS spariscono da sole e i bypass rimasti
 Alcuni iPad vecchi accettano solo SSH con chiavi RSA legacy: in quel caso
 aggiungi `-o HostKeyAlgorithms=+ssh-rsa` ai comandi `ssh`.
 
-## 4. Compilazione
+## 4. File pronti (Releases) oppure compilazione
+
+Se non vuoi compilare, scarica dalla pagina **Releases** del repository
+l'IPA (`NineGuard-build*-armv7.ipa`) e il companion
+(`dev.luke.nineguard.daemon_*_iphoneos-arm.deb`), controlla i checksum con
+`sha256sum -c SHA256SUMS` e passa al punto 5, usando quei file al posto di
+quelli compilati.
+
+Per compilare da sorgente:
 
 Dalla radice del repository:
 
@@ -135,10 +143,14 @@ Sostituisci `IPAD` con `root@<indirizzo dell'iPad>`. I file si copiano con
 `ssh ... 'cat > file'` invece di `scp`: gli `scp` recenti usano SFTP, che il
 vecchio OpenSSH dell'iPad potrebbe non avere.
 
+I comandi usano i nomi dei file della Release; se hai compilato, usa
+`DaemonPackage/packages/dev.luke.nineguard.daemon_*.deb` e
+`/tmp/ng-ipa/NineGuard.ipa`.
+
 1. **Companion (daemon + motore)**, prima dell'app:
 
    ```bash
-   ssh IPAD 'cat > /tmp/ng.deb' < DaemonPackage/packages/dev.luke.nineguard.daemon_*_iphoneos-arm.deb
+   ssh IPAD 'cat > /tmp/ng.deb' < dev.luke.nineguard.daemon_0.3.2-1+debug_iphoneos-arm.deb
    ssh IPAD 'dpkg -i /tmp/ng.deb && rm /tmp/ng.deb'
    ```
 
@@ -149,13 +161,14 @@ vecchio OpenSSH dell'iPad potrebbe non avere.
 
    In alternativa, lo script di test fa build, copia e `dpkg -i` in un
    colpo solo: `DaemonPrototype/tests/device-start-profile.sh install`
-   (usa la variabile `IPAD`, default `root@10.10.99.104`).
+   (richiede la variabile `IPAD`, ad esempio
+   `IPAD=root@<indirizzo-iPad> DaemonPrototype/tests/device-start-profile.sh install`).
 
 2. **App**:
 
    ```bash
    NAME=/tmp/NineGuard-$(date +%s).ipa
-   ssh IPAD "cat > $NAME" < /tmp/ng-ipa/NineGuard.ipa
+   ssh IPAD "cat > $NAME" < NineGuard-build17-armv7.ipa
    ssh IPAD "installipa $NAME; rm -f $NAME"
    ```
 
