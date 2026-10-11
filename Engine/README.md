@@ -7,8 +7,9 @@ archivio con SHA-256 diverso da quello registrato nello script.
 
 Prerequisiti già presenti sulla workstation di sviluppo:
 
-- Go 1.14.15 isolato in `/home/luke/.local/opt/nineguard-go114/go`;
-- Theos clang, SDK iPhoneOS 9.2 e `ldid` in `/home/luke/theos`;
+- Go 1.14.15 isolato in `~/.local/opt/nineguard-go114/go` (oppure
+  `NINEGUARD_GO_ROOT`);
+- Theos clang, SDK iPhoneOS 9.2 e `ldid` in `~/theos` (oppure `THEOS`);
 - `curl`, `tar`, `sha256sum` e `file`.
 
 Compilazione:

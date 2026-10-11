@@ -9,8 +9,9 @@ round-trip, IPC, launchd, Keychain).
 
 ## Regole
 
-- Target invariato `iphone:clang:9.2:9.0`, `ARCHS = armv7`; Theos in `/home/luke/theos`.
-- iPad: `root@10.10.99.104`, SSH con `-o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR`.
+- Target invariato `iphone:clang:9.2:9.0`, `ARCHS = armv7`; Theos in `~/theos` o `$THEOS`.
+- iPad: usare la variabile `IPAD=root@<indirizzo-iPad>`; SSH con
+  `-o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR`.
 - Patch piccole, output limitato, niente Git finché il lavoro non è concluso.
 - Mai default route, DNS o modifiche Wi-Fi senza che Luke lo chieda (full
   tunnel + DNS del profilo: chiesto l'11 ott 2026, sempre con ripristino).

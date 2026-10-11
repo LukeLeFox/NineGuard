@@ -6,8 +6,8 @@ ARCHIVE_SHA256=d2d6040070044e7f92a0d8d6d2a32a17642587f1c2959909acfdceb25f8b9a97
 GO_VERSION=go1.14.15
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-THEOS_ROOT=${THEOS:-/home/luke/theos}
-GO_ROOT=${NINEGUARD_GO_ROOT:-/home/luke/.local/opt/nineguard-go114/go}
+THEOS_ROOT=${THEOS:-${HOME}/theos}
+GO_ROOT=${NINEGUARD_GO_ROOT:-${HOME}/.local/opt/nineguard-go114/go}
 BUILD_ROOT=$(mktemp -d /tmp/nineguard-engine-build.XXXXXX)
 ARCHIVE="$BUILD_ROOT/source.tar.gz"
 SOURCE_DIR="$BUILD_ROOT/wireguard-go-$COMMIT"

@@ -7,7 +7,7 @@ set -eu
 COMMIT=52c834c4469f4f6e33c97c7294faffabfcbf114a
 ARCHIVE_SHA256=d2d6040070044e7f92a0d8d6d2a32a17642587f1c2959909acfdceb25f8b9a97
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-GO_ROOT=${NINEGUARD_GO_ROOT:-/home/luke/.local/opt/nineguard-go114/go}
+GO_ROOT=${NINEGUARD_GO_ROOT:-${HOME}/.local/opt/nineguard-go114/go}
 CACHED=${NINEGUARD_WG_ARCHIVE:-/tmp/nineguard-wireguard-go-2020/source.tar.gz}
 BUILD_ROOT=$(mktemp -d /tmp/nineguard-testpeer-build.XXXXXX)
 ARCHIVE="$BUILD_ROOT/source.tar.gz"

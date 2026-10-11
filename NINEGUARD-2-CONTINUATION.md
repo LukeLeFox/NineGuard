@@ -8,9 +8,9 @@ continuare senza la cronologia ChatGPT/Work. Leggere anche
 
 ## Regole operative
 
-- directory: `/home/luke/Development/iOS-Legacy/NineGuard`;
+- directory: radice del repository NineGuard;
 - target invariato: `iphone:clang:9.2:9.0`, `ARCHS = armv7`;
-- iPad mini 1 iOS 9.3.6: `root@10.10.99.104`;
+- iPad mini 1 iOS 9.3.6: usare `IPAD=root@<indirizzo-iPad>`;
 - SSH: `-o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR`;
 - patch piccole, output limitato, niente Git fino alla fine;
 - non modificare Wi-Fi, default route o DNS;
@@ -406,7 +406,7 @@ Il nuovo Makefile del daemon è quindi in `DaemonPrototype/Makefile.start-profil
 (il vecchio è salvato in `_backup-pre-start-profile/DaemonPrototype/Makefile.orig`):
 
 ```bash
-cd /home/luke/Development/iOS-Legacy/NineGuard
+cd /percorso/del/repository/NineGuard
 cp DaemonPrototype/Makefile.start-profile DaemonPrototype/Makefile
 chmod +x DaemonPrototype/tests/device-start-profile.sh \
          DaemonPrototype/tests/host/run-host-tests.sh TestPeer/build-test-peer.sh
@@ -458,7 +458,7 @@ endpoint).
 ## Prompt minimo per la prossima sessione
 
 ```text
-Lavora in /home/luke/Development/iOS-Legacy/NineGuard. Leggi per intero
+Lavora nella radice del repository NineGuard. Leggi per intero
 NINEGUARD-2-CONTINUATION.md (sezioni "Sessione 2" e "Prossimo passo esatto").
 App build 15 IPA installata (pulsante Connetti/Disconnetti verificato con
 ngtestpeer); companion 0.2.0-1+debug installato; gate install/uapi/net/peer

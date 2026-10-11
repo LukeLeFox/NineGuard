@@ -21,10 +21,10 @@ Nuova architettura prevista:
 
 Vincoli operativi:
 
-- directory: `/home/luke/Development/iOS-Legacy/NineGuard`;
-- Theos: `/home/luke/theos`;
+- directory: radice del repository NineGuard;
+- Theos: `~/theos` o variabile `THEOS`;
 - target invariato: `iphone:clang:9.2:9.0`, `ARCHS = armv7`;
-- iPad: `root@10.10.99.104`;
+- iPad: variabile `IPAD=root@<indirizzo-iPad>`;
 - SSH legacy: `-o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR`;
 - patch piccole, un passo per volta, output limitato;
 - non modificare ancora app, NetworkExtension, profili, IP, route o DNS;
@@ -134,9 +134,9 @@ Riferimenti primari:
 ## Compilazione riproducibile
 
 ```bash
-/home/luke/theos/toolchain/linux/iphone/bin/clang \
+"${THEOS:-$HOME/theos}/toolchain/linux/iphone/bin/clang" \
     -target armv7-apple-ios9.0 \
-    -isysroot /home/luke/theos/sdks/iPhoneOS9.2.sdk \
+    -isysroot "${THEOS:-$HOME/theos}/sdks/iPhoneOS9.2.sdk" \
     -miphoneos-version-min=9.0 \
     -Os -Wall -Wextra -Werror -fPIE \
     -Wl,-pie -Wl,-dead_strip \
@@ -144,7 +144,7 @@ Riferimenti primari:
     -o UtunProbe/utun_probe
 
 cp -p UtunProbe/utun_probe UtunProbe/utun_probe.signed
-/home/luke/theos/toolchain/linux/iphone/bin/ldid \
+"${THEOS:-$HOME/theos}/toolchain/linux/iphone/bin/ldid" \
     -S UtunProbe/utun_probe.signed
 ```
 
@@ -419,7 +419,7 @@ Non eseguire durante nuove prove. Quando non serve più:
 
 ```bash
 ssh -o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR \
-    root@10.10.99.104 \
+    "$IPAD" \
     'rm -rf /tmp/nineguard-utun-probe'
 ```
 
@@ -428,7 +428,7 @@ Il bersaglio è limitato alla directory temporanea indicata sopra.
 ## Prompt breve per una nuova chat
 
 ```text
-Lavora in /home/luke/Development/iOS-Legacy/NineGuard. Leggi per intero
+Lavora nella radice del repository NineGuard. Leggi per intero
 NINEGUARD-UTUN-HANDOFF.md e continua da “Aggiornamento rete utun”. Non rifare
 i test ABI, IPv4, route, consegna UDP o round-trip WireGuard cifrato già
 riusciti. Anche lifecycle root, IPC reciproco HMAC/Keychain, timeout anti-stallo

@@ -28,7 +28,7 @@
 set -eu
 
 PHASE=${1:-uapi}
-IPAD=${IPAD:-root@10.10.99.104}
+: "${IPAD:?Imposta IPAD, ad esempio root@indirizzo-ipad}"
 SSH_OPTS="-o HostKeyAlgorithms=+ssh-rsa -o LogLevel=ERROR"
 BUILD_DIR=${BUILD_DIR:-/tmp/nineguard-daemon-build}
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)

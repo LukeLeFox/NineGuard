@@ -10,6 +10,22 @@ UtunProbe/utun_probe.signed
 *.ipa
 *.deb
 *.o
+*.dSYM/
+*.xcarchive/
+
+# Credenziali, firme e configurazione locale
+.env
+.env.*
+!.env.example
+*.mobileprovision
+*.p12
+*.pfx
+*.pem
+*.cer
+*.crt
+*.log
+secrets/
+private/
 
 # Backup locali
 _backup-*/
