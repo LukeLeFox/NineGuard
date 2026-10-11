@@ -90,11 +90,21 @@ launchd lo riavvia: le chiavi DNS spariscono da sole e i bypass rimasti
 
 **iPad**
 
-- iPad con iOS 9 a 32 bit (ARMv7), jailbroken, testato solo su iPad mini 1
-  con iOS 9.3.6;
-- OpenSSH (accesso root) e `dpkg`;
-- un modo per installare IPA firmate ad hoc, ad esempio `installipa`
-  (IPA Installer Console), con AppSync Unified se il jailbreak lo richiede.
+- iPad (o iPhone) con iOS 9 a 32 bit (ARMv7), jailbroken. Testato solo su
+  iPad mini 1 (`iPad2,7`) con iOS 9.3.6 e jailbreak untethered (iocaste).
+- Pacchetti Cydia (versioni presenti sull'iPad di test):
+
+  | Pacchetto | ID | Versione | Repo | Serve per |
+  | --- | --- | --- | --- | --- |
+  | OpenSSH | `openssh` | 6.7p1-13 | predefinito (saurik) | accesso root via SSH |
+  | AppSync Unified | `ai.akemi.appsyncunified` | 116.2 | `https://cydia.akemi.ai/` | installare l'IPA firmata ad hoc |
+  | IPA Installer Console | `com.autopear.installipa` | 3.4.1-1 | BigBoss (predefinito) | comando `installipa` |
+  | UIKit Tools | `uikittools` | 1.1.12 | predefinito | `uiopen` (facoltativo) |
+
+  `dpkg` è già presente con Cydia. Dopo aver installato OpenSSH **cambia
+  subito le password di `root` e `mobile`** (il default di iOS è `alpine`):
+  da SSH come root, `passwd` e poi `passwd mobile`.
+- iPad e PC sulla stessa rete Wi-Fi (serve solo per installare).
 
 **PC di build (Linux)**
 
@@ -139,7 +149,8 @@ cp -a .theos/_/Applications/NineGuard.app /tmp/ng-ipa/Payload/
 
 ## 5. Installazione sull'iPad
 
-Sostituisci `IPAD` con `root@<indirizzo dell'iPad>`. I file si copiano con
+Sostituisci `IPAD` con `root@<indirizzo dell'iPad>` (l'indirizzo è in
+Impostazioni → Wi-Fi → (i) accanto alla rete). I file si copiano con
 `ssh ... 'cat > file'` invece di `scp`: gli `scp` recenti usano SFTP, che il
 vecchio OpenSSH dell'iPad potrebbe non avere.
 

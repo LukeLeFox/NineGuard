@@ -4,7 +4,19 @@ Client WireGuard per iPad mini 1 (iOS 9.3.6, jailbreak), senza
 NetworkExtension: app IPA + daemon root launchd + `wireguard-go` ARMv7
 su `utun0`.
 
-**Come funziona, installazione e uso: [GUIDA.md](GUIDA.md).**
+![NineGuard su iPad mini 1](docs/screenshots/nineguard-home.png)
+
+## Installazione rapida
+
+1. Sull'iPad jailbroken: OpenSSH, AppSync Unified e IPA Installer Console
+   da Cydia.
+2. Dalla pagina [Releases](https://github.com/LukeLeFox/NineGuard/releases/latest)
+   scarica il `.deb` del companion e l'IPA.
+3. Installa prima il `.deb` (`dpkg -i`), poi l'IPA (`installipa`).
+4. Apri NineGuard, importa il QR del profilo WireGuard e tocca Connetti.
+
+Dettagli, requisiti, uso e risoluzione dei problemi:
+**[GUIDA.md](GUIDA.md)**.
 
 ## Struttura
 
