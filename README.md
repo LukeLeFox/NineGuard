@@ -4,6 +4,8 @@ Client WireGuard per iPad mini 1 (iOS 9.3.6, jailbreak), senza
 NetworkExtension: app IPA + daemon root launchd + `wireguard-go` ARMv7
 su `utun0`.
 
+**Come funziona, installazione e uso: [GUIDA.md](GUIDA.md).**
+
 ## Struttura
 
 | Percorso | Contenuto |
@@ -29,6 +31,8 @@ DaemonPrototype/tests/host/run-host-tests.sh
 
 ## Documentazione
 
+- `GUIDA.md`: come funziona, requisiti, compilazione, installazione, uso,
+  disinstallazione, problemi comuni.
 - `NINEGUARD-2-CONTINUATION.md`: stato, gate verificati, sessioni.
 - `DaemonPrototype/FULL-TUNNEL-DNS-DESIGN.md`: full tunnel, DNS, watchdog
   cambio rete, MTU.

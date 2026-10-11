@@ -24,6 +24,6 @@ Il pacchetto contiene:
 del primo provisioning: resta vivo senza creare il socket finché l'app non
 genera il segreto condiviso nel Keychain.
 
-Stato verificato sull'iPad: `dev.luke.nineguard.daemon` versione
-`0.1.0-1+debug`, `install ok installed`; l'app IPA ha completato il primo
-`PING` autenticato dopo l'installazione.
+Versione attuale: `0.3.2` (full tunnel + DNS, watchdog cambio rete, MTU
+del profilo), installata e verificata sull'iPad l'11 ottobre 2026.
+Installazione e disinstallazione: vedi `GUIDA.md` nella radice.
