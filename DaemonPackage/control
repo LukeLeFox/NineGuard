@@ -1,0 +1,8 @@
+Package: dev.luke.nineguard.daemon
+Name: NineGuard Daemon
+Version: 0.3.2
+Architecture: iphoneos-arm
+Description: Privileged WireGuard engine companion for NineGuard on iOS 9
+Maintainer: Luke
+Author: Luke
+Section: System

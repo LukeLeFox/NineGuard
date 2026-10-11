@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+PLIST=/Library/LaunchDaemons/dev.luke.nineguard.daemon.plist
+SOCKET=/var/run/nineguard/nineguardd.sock
+
+if [ "$1" = configure ]; then
+    /bin/launchctl unload "$PLIST" >/dev/null 2>&1 || true
+    /bin/rm -f "$SOCKET"
+    /bin/launchctl load "$PLIST"
+fi
+
+exit 0

@@ -1,0 +1,22 @@
+# Build Theos e artefatti
+.theos/
+packages/
+DaemonPackage/packages/
+Engine/build/
+TestPeer/build/
+DaemonPrototype/tests/host/bin/
+UtunProbe/utun_probe
+UtunProbe/utun_probe.signed
+*.ipa
+*.deb
+*.o
+
+# Backup locali
+_backup-*/
+*.pre-*
+main.m.*
+
+# Mai versionare profili o chiavi WireGuard
+*.conf
+client.conf
+*.key

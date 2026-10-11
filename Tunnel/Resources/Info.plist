@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>NineGuardTunnel</string>
+	<key>CFBundleIdentifier</key>
+	<string>dev.luke.nineguard.tunnel</string>
+	<key>CFBundleName</key>
+	<string>NineGuardTunnel</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>13</string>
+	<key>MinimumOSVersion</key>
+	<string>9.0</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.networkextension.packet-tunnel</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>NineGuardTunnelProvider</string>
+	</dict>
+</dict>
+</plist>
